@@ -45,7 +45,9 @@ class AmplitudeFlutterPlugin : FlutterPlugin, MethodCallHandler {
             "init" -> {
                 val client = Amplitude.getInstance(instanceName)
                 client.initialize(ctxt, json.getString("apiKey"),
-                        json.optString("userId", null))
+                        json.optString("userId", null)).apply {
+                    deviceId = json.optString("deviceId", null) ?: deviceId
+                }
 
                 result.success("Init success..")
             }

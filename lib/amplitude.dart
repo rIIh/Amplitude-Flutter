@@ -28,11 +28,14 @@ class Amplitude extends _Amplitude {
     _setLibraryVersion(Constants.packageVersion);
   }
 
-  Future<void> init(String apiKey, {String userId}) async {
+  Future<void> init(String apiKey, {String userId, String deviceId}) async {
     Map<String, dynamic> properties = _baseProperties();
     properties['apiKey'] = apiKey;
     if (userId != null) {
       properties['userId'] = userId;
+    }
+    if (deviceId != null) {
+      properties['deviceId'] = deviceId;
     }
 
     return await _channel.invokeMethod('init', jsonEncode(properties));

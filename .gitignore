@@ -10,3 +10,11 @@ doc/
 **/ios/Flutter/flutter_export_environment.sh
 .flutter-plugins-dependencies
 .last_build_id
+
+android/gradle/wrapper/gradle-wrapper.jar
+
+android/gradle/wrapper/gradle-wrapper.properties
+
+android/gradlew
+
+android/gradlew.bat
